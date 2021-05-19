@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+
+import SecondForm from "./SecondForm";
+import FirstForm from "./FirstForm";
+import FinalForm from "./FinalForm";
+import {FormContext} from "./FormContext";
+import { Container } from "@material-ui/core";
+import {useContext} from "react";
+
 
 function App() {
+const [data,setData] =useContext(FormContext)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Container>
+          <h1 style={{display : data.titleDisplay }}>This is a simple form service built with react</h1>
+          <FirstForm />
+          <SecondForm />
+          <FinalForm />
+      </Container>
     </div>
   );
 }
